@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- todolist练手项目-->
+    <div class="todolistDiv" id="vue-todolist">
+      <div class="top">
+        <h1 class="title">Todo List</h1>
+        <h6 class="subtitle">Get thing done, one item at a time</h6>
+        <hr class="line">
+      </div>
+      <li v-for="(item, index) in items">
+        <input :id="gernerateId(index)" type="checkbox" v-model="item.completed">
+        <label :for="gernerateId(index)" v-bind:class="{ complete:item.completed }">{{item.text}}</label><i class="far fa-trash-alt btn" v-on:click="removeTodo(item)"></i>
+      </li>
+      <div class="addlist">
+        <h4>Add to the todo list</h4>
+        <div class="addbtn">
+          <input class="ipt" type="text" v-model="inputVaule" v-on="add">
+          <div class="btn" v-on:click="add">ADD ITEM</div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

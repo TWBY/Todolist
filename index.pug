@@ -1,0 +1,26 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        link(rel='stylesheet', href='style.css')
+        link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.8.1/css/all.css', integrity='sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf', crossorigin='anonymous')
+        title Document
+    body
+        // todolist练手项目
+        #vue-todolist.todolistDiv
+            .top
+                h1.title Todo List
+                h6.subtitle Get thing done, one item at a time
+                hr.line
+            li(v-for='(item, index) in items')
+                input(:id="gernerateId(index)" type='checkbox', v-model='item.completed')
+                label(:for="gernerateId(index)" v-bind:class='{ complete:item.completed }') {{item.text}}
+                i.far.fa-trash-alt.btn(v-on:click='removeTodo(item)')
+
+            .addlist
+                h4 Add to the todo list
+                .addbtn
+                    input.ipt(type='text', v-model='inputVaule', v-on='add')
+                    .btn(v-on:click='add') ADD ITEM
+        script(src='https://cdn.jsdelivr.net/npm/vue')
+        script(src='script.js')

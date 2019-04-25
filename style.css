@@ -1,0 +1,146 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%; }
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.todolistDiv {
+  margin: 0 auto;
+  width: 500px;
+  height: auto;
+  background-color: #FF6666;
+  color: #fff; }
+  .todolistDiv .top {
+    padding: 30px 50px; }
+    .todolistDiv .top .title {
+      margin-top: 0px;
+      font-weight: 100; }
+    .todolistDiv .top .subtitle {
+      font-weight: 100;
+      margin-top: -20px;
+      letter-spacing: 1px;
+      word-spacing: 2px; }
+    .todolistDiv .top .line {
+      border-color: #fff;
+      opacity: 0.3;
+      margin-top: -20px;
+      margin-bottom: 10px; }
+  .todolistDiv li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    list-style: none;
+    background-color: #FF7676;
+    margin-top: 0.2em;
+    position: relative; }
+    .todolistDiv li label {
+      margin-left: 40px;
+      font-size: 20px; }
+    .todolistDiv li .far {
+      position: absolute;
+      right: 40px;
+      top: 31.5px; }
+  .todolistDiv .addlist {
+    padding: 30px 60px; }
+    .todolistDiv .addlist h4 {
+      font-weight: 100;
+      margin-bottom: 5px; }
+    .todolistDiv .addlist .addbtn {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      .todolistDiv .addlist .addbtn .ipt {
+        width: 75%;
+        height: 50px; }
+      .todolistDiv .addlist .addbtn .btn {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        width: 20%;
+        height: 50px;
+        margin-left: 5px;
+        padding: 2px 20px;
+        font-weight: 100;
+        font-size: 10px;
+        background-color: transparent;
+        border: solid 0.5px #fff;
+        cursor: pointer; }
+
+.complete {
+  color: #FFC8C8; }
+
+input[type=checkbox] {
+  display: none; }
+  input[type=checkbox] + label {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: row;
+    -ms-flex-pack: row;
+    justify-content: row;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    cursor: pointer;
+    font-size: 1.1em;
+    position: relative;
+    width: 400px;
+    height: auto; }
+    input[type=checkbox] + label:before {
+      content: "\2714";
+      font-size: 0.5em;
+      border: 0.15em solid #fff;
+      border-radius: 0.2em;
+      -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+      padding-left: 0.2em;
+      padding-right: 0.2em;
+      margin-right: 0.8em;
+      color: transparent;
+      position: absolute;
+      right: 0px;
+      cursor: pointer; }
+  input[type=checkbox]:checked + label:before {
+    background-color: #fff;
+    color: #FF7676; }
+  input[type=checkbox]:checked + label:after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 0.05em;
+    background: #FFC8C8;
+    width: 300px;
+    height: auto;
+    top: 50%; }

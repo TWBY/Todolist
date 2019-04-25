@@ -1,0 +1,112 @@
+// mixin
+@mixin size($w ,$h)
+  width: $w
+  height: $h
+
+@mixin flexdisplay($display: flex ,$justify-content: center, $align-items: center)
+  display: $display
+  justify-content: $justify-content
+  align-items: $align-items
+
+// variable
+$color-white: #fff
+$light-font-weight: 100
+
+html, body
+  margin: 0
+  padding: 0
+  +size(100%, 100%)
+
+body
+  +flexdisplay()
+
+.todolistDiv
+  margin: 0 auto
+  +size(500px, auto)
+  background-color: #FF6666
+  color: $color-white
+  & .top
+    padding: 30px 50px
+    & .title
+        margin-top: 0px
+        font-weight: $light-font-weight
+    & .subtitle
+        font-weight: $light-font-weight
+        margin-top: -20px
+        letter-spacing: 1px
+        word-spacing: 2px
+    & .line
+        border-color: $color-white
+        opacity: 0.3
+        margin-top: -20px
+        margin-bottom: 10px
+  & li
+      +flexdisplay(flex, space-between, center)
+      +size(100%, 80px)
+      list-style: none
+      background-color: #FF7676
+      margin-top: 0.2em
+      position: relative
+      & label
+        margin-left: 40px
+        font-size: 20px
+      & .far
+        position: absolute
+        right: 40px
+        top: 31.5px
+
+  & .addlist
+    padding: 30px 60px
+    & h4
+      font-weight: 100
+      margin-bottom: 5px
+    & .addbtn
+      +flexdisplay()
+      & .ipt
+        +size(75%, 50px)
+      & .btn
+        +flexdisplay()
+        +size(20%, 50px)
+        margin-left: 5px
+        padding: 2px 20px
+        font-weight: $light-font-weight
+        font-size: 10px
+        background-color: transparent
+        border: solid 0.5px $color-white
+        cursor: pointer
+
+.complete
+  color: #FFC8C8
+
+input[type=checkbox]
+  display: none
+  + label
+    +flexdisplay(flex, row, flex-start)
+    cursor: pointer
+    font-size: 1.1em
+    position: relative
+    +size(400px, auto)
+    &:before
+      content: "\2714"
+      font-size: 0.5em
+      border: 0.15em solid $color-white
+      border-radius: 0.2em
+      align-self: center
+      padding-left: 0.2em
+      padding-right: 0.2em
+      margin-right: 0.8em
+      color: transparent
+      position: absolute
+      right: 0px
+      cursor: pointer
+  &:checked + label:before
+    background-color: $color-white
+    color: #FF7676
+  &:checked + label:after
+    content: ""
+    display: block
+    position: absolute
+    height: 0.05em
+    background: #FFC8C8
+    +size(300px, auto)
+    top: 50%
