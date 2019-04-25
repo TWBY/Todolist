@@ -139,8 +139,7 @@ input[type=checkbox] {
     content: "";
     display: block;
     position: absolute;
-    height: 0.05em;
     background: #FFC8C8;
     width: 300px;
-    height: auto;
+    height: 0.05em;
     top: 50%; }
